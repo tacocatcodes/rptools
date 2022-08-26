@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color Picker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+  <navbar class="navbar has-background-primary" role="navigation" aria-label="main naviigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">Home</a>
+        <a class="navbar-item" href="medical.html">Injury Randomizer</a>
+        <a class="navbar-item" href="colorpicker.html">Color Picker</a>
+      </div>
+    </div>
+  </navbar>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">RGB Color Picker - Paint your cars!</h1>
+      <div class="columns">
+        <div class="column is-half">
+          <div id="color-picker-container"></div><br>
+          <div class="field">
+            <div class="control">
+              <label class="label">RBG value</label>
+              <input class="input" type="text" id="rgb-value" placeholder="255 255 255">
+              </input>
+            </div>
+          </div>
+        </div>
+        <div class="column box is-one-fifth" id="color-swatch">
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro/dist/iro.min.js"></script>
+  <script type="text/javascript">
+    var colorPicker = new iro.ColorPicker("#color-picker-container");
+    colorPicker.on('input:change', onColorChange);
+
+    document.getElementById("rgb-value").addEventListener("keydown", function(e) {
+      if (e.keyCode == 13) { forceColorChange(colorPicker); }
+    });
+
+    function forceColorChange(colorPicker) {
+      var rgb = document.getElementById("rgb-value").value;
+      rgb = rgb.split(" ");
+      if (rgb.length == 3) {colorPicker.color.set({r: rgb[0], g: rgb[1], b: rgb[2]});}
+    }
+
+    function onColorChange(color, changes) {
+      document.getElementById("color-swatch").style.backgroundColor = color.hexString
+      document.getElementById("rgb-value").value = color.rgb.r + " " + color.rgb.g + " " + color.rgb.b;
+    }
+  </script>
+</body>
+</html>

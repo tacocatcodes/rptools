@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Med RP Randomizer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+  <navbar class="navbar has-background-primary" role="navigation" aria-label="main naviigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">Home</a>
+        <a class="navbar-item" href="medical.html">Injury Randomizer</a>
+        <a class="navbar-item" href="colorpicker.html">Color Picker</a>
+      </div>
+    </div>
+  </navbar>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Welcome to the tacocat medical RP randomizer!</h1>
+      <div class="column is-full">
+        <p><strong>Remember: permanent death is a personal choice. Don't ever let someone else decide for you!</strong></p>
+        <p>This tool is meant to help provide more variety to medical RP on TwitchRP. By no means are you held to the results of this randomizer - if you aren't happy with the results, feel free to reroll until you are!</p>
+        <p>This site is a work-in-progress. Have something you would like to see added? Have roleplay tips for specific traumas? Contact @tacocat#0110 on Discord!</p>
+      </div><div class="column is-full">
+        <h2 class="subtitle">Please select the traumas leading up to the event:</h2>
+        <p>
+        <div class="field"><div class="control"><label for="car" class="checkbox"><input type="checkbox" name="trauma" value="car">Accident (car/falling/etc.)</label></div></div>
+        <div class="field"><div class="control"><label for="burn" class="checkbox"><input type="checkbox" name="trauma" value="burn">Burn</label></div></div>
+        <div class="field"><div class="control"><label for="gsw" class="checkbox"><input type="checkbox" name="trauma" value="gsw">Gunshot</label></div></div>
+        <div class="field"><div class="control"><label for="blunt" class="checkbox"><input type="checkbox" name="trauma" value="blunt">Blunt force trauma (e.g. hit by flashlight)</label></div></div>
+        <div class="field"><div class="control"><label for="stab" class="checkbox"><input type="checkbox" name="trauma" value="stab">Puncture (e.g. stabbing)</label></div></div>
+        <div class="field"><div class="control"><label for="misc" class="checkbox"><input type="checkbox" name="trauma" value="misc">Miscellaneous ailments</label></div></div>
+        <button type="button" onclick="killMe()" class="button is-primary">Roll the bones</button>
+        </p>
+      </div><div class="column is-full box">
+        <p id="result">Here we go!</p>
+      </div><div class="column is-full">
+        <p>Special thanks to <a href="https://twitch.tv/swampfox2020">SwampFox2020</a> and <a href="https://twitch.tv/doctorjohn">DoctorJohn</a> for their valuable input, medical knowledge, and proofreading for this tool. Without them, this tool would not be nearly as useful!</p>
+        <p>Please take some time to read <a href="https://docs.google.com/document/d/1gyFSMKGmSfmSy1jwCKd2RVDCfckSP-xMUAvnGdAXnoQ/edit?usp=sharing">Medical RP - A "How To" Guide</a>. It will greatly enhance your roleplay, and will help the EMS and Doctors to provide you with a better, more in-depth experience.</p>
+      </div>
+    </div>
+  </section>
+  <script src="medical.js"></script>
+</body>
+</html>
